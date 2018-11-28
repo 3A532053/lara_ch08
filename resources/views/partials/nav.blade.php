@@ -3,9 +3,9 @@
         <a class="navbar-brand" href="{{ action('HomeController@index') }}">HelloLaravel</a>
         <ul class="nav navbar-nav">
             <li>
-            <!--a href="{{ action('BoardController@index') }}">排行榜</a-->
+            <a href="{{ action('BoardController@getIndex') }}">排行榜</a>
             <!--a href="{{ url('/board') }}">排行榜</a-->
-                <a href="{{ route('board') }}">排行榜</a>
+                {{--<a href="{{ route('board') }}">排行榜</a>--}}
             </li>
         </ul>
     </div>

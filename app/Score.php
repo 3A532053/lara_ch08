@@ -4,7 +4,6 @@ use Illuminate\Database\Eloquent\Model;
 use \App\Student as StudentEloquent;
 class Score extends Model
 {
-
     protected $table = 'score';
     public function student(){
         return $this->belongsTo(StudentEloquent::class);
@@ -13,6 +12,7 @@ class Score extends Model
         return $query->orderBy('score.total','DESC');
     }
     public function scopeOrderBySubject($query){
-        return $query->orderBy('score.chinese','DESC')->orderBy('score.english','DESC')->orderBy('score.math','DESC');
+        return $query->orderBy('score.chinese','DESC')->orderBy('score.english','DESC')
+            ->orderBy('score.math','DESC');
     }
 }
