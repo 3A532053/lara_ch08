@@ -8,27 +8,30 @@
     </div>
     <div class="row">
         <p>
-            學號：{{ $student_no }}
+            信箱：{{ $user->email }}
         </p>
         <p>
-            姓名：小明
+            學號：{{ $student->no }}
         </p>
         <p>
-            電話：0912345678
+            姓名：{{ $user->name }}
+        </p>
+        <p>
+            電話：{{ $student->tel }}
         </p>
         @if( is_null($subject) || $subject=='chinese' )
             <p>
-                國文：60
+                國文：{{ $score->chinese }}
             </p>
         @endif
         @if( is_null($subject) || $subject=='english' )
             <p>
-                英文：60
+                英文：{{ $score->english }}
             </p>
         @endif
         @if( is_null($subject) || $subject=='math' )
             <p>
-                數學：60
+                數學：{{ $score->math }}
             </p>
         @endif
     </div>

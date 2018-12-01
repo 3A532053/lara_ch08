@@ -4,7 +4,6 @@
     <title>@yield('title')</title>
     @section('head')
         @include('partials.head')
-    @show
 </head>
 <body>
 @include('partials.nav')

@@ -5,11 +5,10 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}" />
     <script type="text/javascript" src="{{ asset('js/jquery.min.js') }} "></script>
+
 </head>
 @extends('layouts.master')
-
 @section('title','排行榜')
-
 @section('content')
     <div class="page-header">
         <h1>排名</h1>
@@ -29,19 +28,20 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>1</td>
-                <td>s1234567890</td>
-                <td>小明</td>
-                <td>60</td>
-                <td>60</td>
-                <td>60</td>
-                <td>180</td>
-                <td>
-                    <a class="btn btn-default btn-sm"
-                       href="{{ route('student',['student_no'=>'s1234567890' ]) }}">查看學生資料</a>
-                </td>
-            </tr>
+            @foreach($scores as $index => $score)
+                <tr>
+                    <td>{{$index+1}}</td>
+                    <td>{{$score->student->no}}</td>
+                    <td>{{$score->student->user->name}}</td>
+                    <td>{{$score->chinese}}</td>
+                    <td>{{$score->english}}</td>
+                    <td>{{$score->math}}</td>
+                    <td>{{$score->total}}</td>
+                    <td>
+                        <a class="btn btn-default btn-sm" href="{{ route('student',['student_no'=>$score->student->no]) }}">查看學生資料</a>
+                    </td>
+                </tr>
+            @endforeach
             </tbody>
         </table>
     </div>
