@@ -1,38 +1,35 @@
 @extends('layouts.master')
-
 @section('title','詳細資料')
-
 @section('content')
+
     <div class="page-header">
         <h1>詳細資料</h1>
     </div>
     <div class="row">
         <p>
-            信箱：{{ $user->email }}
+            學號：{{ $student_no }}
         </p>
         <p>
-            學號：{{ $student->no }}
+            姓名：小明
         </p>
         <p>
-            姓名：{{ $user->name }}
+            電話：0912345678
         </p>
-        <p>
-            電話：{{ $student->tel }}
-        </p>
-        @if( is_null($subject) || $subject=='chinese' )
+        @if ( is_null($subject) || $subject=='chinese')
             <p>
-                國文：{{ $score->chinese }}
+                國文：60
             </p>
         @endif
-        @if( is_null($subject) || $subject=='english' )
+        @if ( is_null($subject) || $subject=='english')
             <p>
-                英文：{{ $score->english }}
+                英文：60
             </p>
         @endif
-        @if( is_null($subject) || $subject=='math' )
+        @if ( is_null($subject) || $subject=='math')
             <p>
-                數學：{{ $score->math }}
+                數學：60
             </p>
         @endif
     </div>
+
 @stop

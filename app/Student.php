@@ -6,7 +6,8 @@ use \App\Score as ScoreEloquent;
 use DB;
 class Student extends Model
 {
-    protected $table = 'student';
+    //
+    protected $table = 'students';
     public function user(){
         return $this->belongsTo(UserEloquent::class);
     }
